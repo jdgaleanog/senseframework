@@ -1,0 +1,7 @@
+sensado  KEYWORD1
+
+sensor	KEYWORD2
+
+lm335	KEYWORD3
+
+lm35	KEYWORD4
