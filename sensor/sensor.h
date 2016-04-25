@@ -12,8 +12,10 @@ Lanzado bajo licencia ---
 
 #include "arduino.h"
 
+#include "conversion.h"
 
-class sensor
+
+class sensor: public conversion
       {
 
        public:
@@ -22,8 +24,7 @@ class sensor
 
         float lm35();
         float lm335();
-        float fahrenheit(float cel);
-        float kelvin(float cel);
+        
        private:
 
       	 int _pin;

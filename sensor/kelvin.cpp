@@ -1,9 +1,9 @@
 #include "arduino.h"
 
-#include "sensor.h"
+#include "conversion.h"
 
 
-float sensor::kelvin(float cel)
+float conversion::kelvin(float cel)
 {
     float kelv=0;
     kelv=cel+273.15;
