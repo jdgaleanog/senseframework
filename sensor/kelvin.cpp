@@ -1,9 +1,9 @@
 #include "arduino.h"
 
-#include "conversion.h"
+#include "functionconv.h"
 
 
-float conversion::kelvin(float cel)
+float functionconv::kelvin(float cel)
 {
     float kelv=0;
     kelv=cel+273.15;

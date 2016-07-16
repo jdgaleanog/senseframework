@@ -12,19 +12,24 @@ Lanzado bajo licencia ---
 
 #include "arduino.h"
 
+#define F 7
 
-class conversion 
+#define K 8
+
+class functionconv
       {
 
        public:
 
-	conversion(); //constructor
+    functionconv();
+
+	float conversion(float cel, int unit); //constructor
 
         float fahrenheit(float cel);
         float kelvin(float cel);
        private:
 
-      	 float cel;
+      	 float _cel;
 
 };
 

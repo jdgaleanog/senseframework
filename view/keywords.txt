@@ -1,0 +1,5 @@
+sensado  KEYWORD1
+
+lm35	KEYWORD2
+
+Palabra2	KEYWORD3

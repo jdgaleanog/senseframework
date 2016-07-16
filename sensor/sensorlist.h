@@ -13,13 +13,14 @@ Lanzado bajo licencia ---
 
 #include "arduino.h"
 
-#include "conversion.h"
+#include "functionconv.h"
 
 
 #include "lm35.h"
 #include "lm335.h"
+#include "dht.h"
 
-class sensorlist : public lm35, public lm335
+class sensorlist : public lm35, public lm335, public dht, public functionconv
       {
 
        public:

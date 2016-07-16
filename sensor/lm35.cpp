@@ -1,21 +1,47 @@
+﻿/*
+
+Libejemplo.cpp - Sensado de temperatura con lm35 cpp
+
+Creada por Nombre Autor, Fecha
+
+Lanzado bajo 
+*/
+
+
+
 #include "arduino.h"
 
-#include "sensor.h"
+#include "lm35.h"
 
-float sensor::lm35()
+
+
+lm35::lm35()
+
+	{
+ 
+
+
+	}
+
+
+void lm35::initlm35(int pin)
+
+	{
+ 
+	 pinMode(pin, INPUT);  //ejemplo
+  
+	_pin = pin;
+
+}
+
+
+float lm35::readlm35()
 
 {
+
+
 int val = analogRead(_pin);
-float mv = (val/1024.0)*5000;
+float mv = (val/1024.0)*5000; 
 float cel = mv/10;
-//float farh = (cel*9)/5 + 32;
-
-#ifdef pant
-Serial.println("TEMPRATURE = ");
-Serial.println(cel);
-
-#endif // pant
-delay(100);
-cel=kelvin(cel);
 return cel;
 }

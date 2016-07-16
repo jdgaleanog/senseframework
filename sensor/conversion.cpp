@@ -11,14 +11,33 @@ Lanzado bajo
 
 #include "arduino.h"
 
-#include "conversion.h"
+#include "functionconv.h"
 
 
-conversion::conversion()
+float functionconv::conversion(float cel, int unit)
 
 	{
 
-	 
+     _cel=cel;
+
+
+     switch(unit)       {
+
+        case F:
+
+        _cel=fahrenheit(_cel);
+
+        break;
+
+
+        case K:
+
+        _cel=kelvin(_cel);
+
+        break;
+     }
+
+return _cel;
 
 	}
 

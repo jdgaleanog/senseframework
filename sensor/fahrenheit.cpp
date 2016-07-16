@@ -1,9 +1,9 @@
 #include "arduino.h"
 
-#include "conversion.h"
+#include "functionconv.h"
 
 
-float conversion::fahrenheit(float cel)
+float functionconv::fahrenheit(float cel)
 {
     float fahr=0;
     fahr=(cel*9)/5 + 32;
