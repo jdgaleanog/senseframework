@@ -1,5 +1,3 @@
-# senseframework
-
 Sense Framework
 ===============
 
