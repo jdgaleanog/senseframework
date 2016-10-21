@@ -1,15 +1,14 @@
-/* DHT library
+/* DHT.h library
 
 MIT license
 written by Adafruit Industries
 */
 #ifndef dht_H
 #define dht_H
-
 #if ARDUINO >= 100
- #include "Arduino.h"
+#include "Arduino.h"
 #else
- #include "WProgram.h"
+#include "WProgram.h"
 #endif
 
 

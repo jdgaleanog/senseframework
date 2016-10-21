@@ -1,14 +1,14 @@
 ﻿/*
-  lm35.h - Librería
- para sensar temperatura mediante lm35
+  sensor.h - Librería
+ funcion principal encardad de manjear las demas funciones
 Creada por Nombre Autor, Fecha
 
 Lanzado bajo licencia ---
 */
 #ifndef sensor_h
 #define sensor_h
-#include "arduino.h"
-#include "functionconv.h"
+#include "Arduino.h"
+#include "sensorlist.h"
 
 #define LM35 1
 #define LM335 2
@@ -21,26 +21,29 @@ Lanzado bajo licencia ---
 #define C 9
 
 
-#include "sensorlist.h"
-
 class sensor : public sensorlist
       {
 
        public:
+         sensor();
+         sensor(int type, int pin0); //constructor
+         sensor(int type, int pin0, int pin1);
+         void init(int type, int pin0, int pin1);
+         float read(int variable, int unit);
+         float read(int unit);
+         int _type;
+         int _unit;
+         int returnType();
+         int returnUnit();
 
-	sensor(int type, int pin0); //constructor
-	sensor(int type, int pin0, int pin1);
-	void init(int type, int pin0, int pin1);
-    float read(int variable, int unit);
-    float read(int unid);
 
        private:
 
-    int _pin0;
-	int _pin1;
-	int _type;
-    float _cel;
-    int _variable;
+         int _pin0;
+         int _pin1;
+         //int _type;
+         float _dataReaded;
+         int _variable;
 
 };
 

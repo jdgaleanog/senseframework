@@ -1,43 +1,39 @@
 /*
 
-Libejemplo.cpp - Sensado de temperatura con lm35 cpp
+conversion.cpp - llamar funciones de temperatura
 
 Creada por Nombre Autor, Fecha
 
 Lanzado bajo
 */
 
-
-
 #include "arduino.h"
-
 #include "functionconv.h"
 
 
-float functionconv::conversion(float cel, int unit)
+float functionconv::conversion(float dataReaded, int unit)
 
 	{
 
-     _cel=cel;
+     _dataReaded=dataReaded;
 
 
      switch(unit)       {
 
-        case F:
+			 	case F:
 
-        _cel=fahrenheit(_cel);
+					_dataReaded=fahrenheit(_dataReaded);
 
         break;
 
 
-        case K:
+				case K:
 
-        _cel=kelvin(_cel);
+					_dataReaded=kelvin(_dataReaded);
 
         break;
      }
 
-return _cel;
+		 return _dataReaded;
 
 	}
-

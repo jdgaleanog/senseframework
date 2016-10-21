@@ -1,77 +1,82 @@
+/*
+  read.cpp - para llamar funciones de lectura de cada sensor
+Creada por Nombre Autor, Fecha
+
+Lanzado bajo licencia ---
+*/
+
 #include "arduino.h"
 #include "sensor.h"
 
 
-
 float sensor::read(int unit)
-{
+  {
+    _unit=unit;
     switch (_type) {
 
         case LM35:
-
-        _cel=readlm35();
-
+            _dataReaded=readlm35();
         break;
 
-
         case LM335:
-            _cel=readlm335();
+            _dataReaded=readlm335();
         break;
 
         case DHT11:
-
-            _cel=readHumidity();
-
+            _variable=unit;
+            if (_variable=HUMIDITY)
+          {
+            _dataReaded=readHumidity();
+          }
         break;
 
         case DHT22:
-
-            _cel=readHumidity();
-
+        _variable=unit;
+        if (_variable=HUMIDITY)
+      {
+        _dataReaded=readHumidity();
+      }
         break;
-
     }
 
-if (unit=C)
-{
+    if (unit=C){
+      }
 
-}
-else
-{
-    _cel=conversion(_cel, unit);
+    else
+      {
+        _dataReaded=conversion(_dataReaded, unit);
+      }
 
-}
-
-    return _cel;
-}
+        return _dataReaded;
+  }
 
 
 float sensor::read(int variable, int unit)
 
-{
-
+  {
     _variable=variable;
+    _unit=unit;
 
     switch (_type) {
 
         case DHT11:
-            _cel=readTemperature(false);
+            _dataReaded=readTemperature(false);
         break;
 
         case DHT22:
-            _cel=readTemperature(false);
+            _dataReaded=readTemperature(false);
         break;
     }
 
    if (unit==C)
     {
-        _cel=_cel;
+        _dataReaded=_dataReaded;
     }
 
     if((unit==F)||(unit==K))
     {
-    _cel=conversion(_cel, unit);
+        _dataReaded=conversion(_dataReaded, unit);
     }
 
-    return _cel;
+    return _dataReaded;
 }

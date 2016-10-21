@@ -12,7 +12,7 @@ view::view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
 			     uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
 {
 
-init(0, rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+//	init(0, rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 
   _rs=rs;
   _rw=rw;
@@ -26,7 +26,9 @@ init(0, rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
   _d6=d6;
   _d7=d7;
   _type=type;
-begin(16,2);
+
+	initview(rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+//	begin(16,2);
 
   //Init(0, rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 }
@@ -35,7 +37,7 @@ view::view(int type, uint8_t rs, uint8_t enable,
 			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
 			     uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
 {
-    init(0, rs, 255, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+  //init(0, rs, 255, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 
   _rs=rs;
   _enable=enable;
@@ -48,14 +50,15 @@ view::view(int type, uint8_t rs, uint8_t enable,
   _d6=d6;
   _d7=d7;
   _type=type;
-begin(16,2);
+	//begin(16,2);
+	initview(rs, enable, d0, d1, d2, d3, d4, d5, d6, d7);
   //Init(0, rs, 255, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 }
 
 view::view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
 			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3)
 {
-    init(1, rs, rw, enable, d0, d1, d2, d3, 0, 0, 0, 0);
+  //init(1, rs, rw, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 
   _rs=rs;
   _rw=rw;
@@ -65,14 +68,17 @@ view::view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
   _d2=d2;
   _d3=d3;
   _type=type;
-begin(16,2);
+
+	initview(rs, rw, enable, d0, d1, d2, d3);
+
+	//begin(16,2);
   //Init(1, rs, rw, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 }
 
 view::view(int type, uint8_t rs,  uint8_t enable,
 			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3)
 {
-   init(1, rs, 255, enable, d0, d1, d2, d3, 0, 0, 0, 0);
+  //init(1, rs, 255, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 
   _rs=rs;
   _enable=enable;
@@ -81,14 +87,15 @@ view::view(int type, uint8_t rs,  uint8_t enable,
   _d2=d2;
   _d3=d3;
   _type=type;
-begin(16,2);
+//	begin(16,2);
+initview(rs,  enable, d0, d1, d2, d3);
   //Init(1, rs, 255, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 }
 
 view::view(int type, int pin)
 
 {
-    _pin=pin;
+  _pin=pin;
 	_type=type;
-   initview(_pin);
+  initview(_pin);
 }

@@ -1,14 +1,10 @@
 #include "arduino.h"
 #include "led.h"
 
-led::led()
-{
-
-}
 
 void led::initled(int pin)
 {
- _pin = pin;
+   _pin = pin;
    pinMode(pin, OUTPUT);
 }
 
@@ -17,7 +13,7 @@ void led::showled(float refer1, int limit1, float var)
 {
 
 
-        switch (limit1) {
+    switch (limit1) {
 
         case HIGHER:
 
@@ -48,40 +44,31 @@ void led::showled(float refer1, int limit1, float var)
 }
 }
 
-void led::showled(float refer1, float refer2, float var)
+void led::showled(float higherThan, float lowerThan, float var)
 {
 
 
-        if (refer1 > refer2) {
+        if (higherThan > lowerThan) {
 
-            if (var> refer1)
-            {
+        if (var> higherThan) {
             digitalWrite(_pin,HIGH);
             }
-            else if (var < refer2)
-            {
+        else if (var < lowerThan) {
             digitalWrite(_pin,HIGH);
             }
-            else
-            {
+        else {
+            digitalWrite(_pin, LOW);
+            }
+          }
+
+        if (higherThan < lowerThan) {
+
+        if ((var > higherThan)&&(var < lowerThan)){
+            digitalWrite(_pin,HIGH);
+            }
+        else {
             digitalWrite(_pin, LOW);
             }
         }
-
-                if (refer1 < refer2) {
-
-            if ((var > refer1)&&(var < refer2))
-            {
-            digitalWrite(_pin,HIGH);
-            }
-            else
-            {
-            digitalWrite(_pin, LOW);
-            }
-        }
-
 
 }
-
-
-

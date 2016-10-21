@@ -25,34 +25,39 @@ class view :  public led, LiquidCrystal
       {
 
        public:
+       view(int type, int pin);
+       view(int type, uint8_t rs, uint8_t enable,
+              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+              uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+       view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
+              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+              uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+       view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
+              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
+       view(int type, uint8_t rs, uint8_t enable,
+              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
-    view(int type, int pin);
+       void initview(int pin);
 
-    view(int type, uint8_t rs, uint8_t enable,
- uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
-		uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+       void initview(uint8_t rs, uint8_t rw, uint8_t enable,
+       			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+       			     uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
 
-    view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
- uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
-		uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+       void initview(uint8_t rs, uint8_t enable,
+      			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+      			     uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
 
-    view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
- uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
+       void initview(uint8_t rs, uint8_t rw, uint8_t enable,
+            		     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
-    view(int type, uint8_t rs, uint8_t enable,
- uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
-
-void initview(int pin);
-
-void initview(uint8_t fourbitmode, uint8_t rs, uint8_t rw, uint8_t enable,
-	    uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
-	    uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+       void initview(uint8_t rs,  uint8_t enable,
+            		     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
 
-void show(float refer1, float refer2, float var);
-void show(float refer1, int limit1, float var);
-void show(char const* name, float var);
-void show(char const* name, float var, char const* name2, float var2);
+       void show(float refer1, float refer2, float var);
+       void show(float refer1, int limit1, float var);
+       void show(char const* name, float var);
+       void show(char const* name, float var, char const* name2, float var2);
 
        private:
 

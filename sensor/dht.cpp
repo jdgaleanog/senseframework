@@ -1,4 +1,4 @@
-/* DHT library
+/* DHT.cpp library
 
 MIT license
 written by Adafruit Industries

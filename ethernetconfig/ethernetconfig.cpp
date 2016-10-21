@@ -1,13 +1,11 @@
 #include "ethernetconfig.h"
 #include "Arduino.h"
 
-ethernetconfig::ethernetconfig (String url [], String varName[], String value[])
+ethernetconfig::ethernetconfig (char server[], byte mac[])
 {
-    _save = sizeof(url);
 
-}
+_server=server;
+_sent=0;
+_mac=mac;
 
-int ethernetconfig::retornar ()
-{
-  return _save;
 }

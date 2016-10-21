@@ -1,19 +1,16 @@
 /*
-  lm35.h - Librería
- para sensar temperatura mediante lm35
+  functionconv.h - Libreria
+ para convertir temperatura leida
 Creada por Nombre Autor, Fecha
 
 Lanzado bajo licencia ---
 */
 
 #ifndef functionconv_h
-
 #define functionconv_h
-
 #include "arduino.h"
 
 #define F 7
-
 #define K 8
 
 class functionconv
@@ -21,19 +18,14 @@ class functionconv
 
        public:
 
-  
+         float conversion(float dataReaded, int unit); //constructor
+         float fahrenheit(float dataReaded);
+         float kelvin(float dataReaded);
 
-	float conversion(float cel, int unit); //constructor
-
-        float fahrenheit(float cel);
-        float kelvin(float cel);
        private:
 
-      	 float _cel;
+      	 float _dataReaded;
 
 };
-
-
-
 
 #endif

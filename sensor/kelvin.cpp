@@ -1,11 +1,18 @@
-#include "arduino.h"
+/*
+kelvin.cpp - pasar de Celsius a kelvin
 
+Creada por Nombre Autor, Fecha
+
+Lanzado bajo
+*/
+
+#include "arduino.h"
 #include "functionconv.h"
 
 
-float functionconv::kelvin(float cel)
+float functionconv::kelvin(float dataReaded)
 {
     float kelv=0;
-    kelv=cel+273.15;
+    kelv=dataReaded+273.15;
     return kelv;
 }
