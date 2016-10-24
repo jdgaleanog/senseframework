@@ -36,14 +36,14 @@ written by Adafruit Industries
 
 class dht {
   public:
-        void initDHT(int pin, int type);
-   void begin(void);
-   float readTemperature(bool S=false);
-   float convertCtoF(float);
-   float convertFtoC(float);
-   float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=true);
-   float readHumidity(void);
-   boolean read(void);
+	void initDHT(int pin, int type);
+	void begin(void);
+	float readTemperature(bool S=false);
+	float convertCtoF(float);
+	float convertFtoC(float);
+	float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=true);
+	float readHumidity(void);
+	boolean read(void);
 
  private:
   uint8_t data[6];
