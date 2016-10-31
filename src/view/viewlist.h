@@ -1,10 +1,7 @@
 #ifndef viewlist_h
 #define viewlist_h
 
-#include "arduino.h"
-
-
-
+#include "Arduino.h"
 #include "led.h"
 #include "LiquidCrystal.h"
 
