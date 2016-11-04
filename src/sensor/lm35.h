@@ -8,7 +8,7 @@ Lanzado bajo licencia ---
 
 #ifndef lm35_h
 #define lm35_h
-#include "arduino.h"
+#include "Arduino.h"
 
 
 class lm35

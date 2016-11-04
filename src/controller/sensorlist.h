@@ -9,7 +9,7 @@ Lanzado bajo licencia ---
 #ifndef sensorlist_h
 #define sensorlist_h
 
-#include "arduino.h"
+#include "Arduino.h"
 #include "functionconv.h"
 #include "lm35.h"
 #include "lm335.h"

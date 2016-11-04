@@ -6,7 +6,7 @@ Creada por Nombre Autor, Fecha
 Lanzado bajo
 */
 
-#include "arduino.h"
+#include "Arduino.h"
 #include "lm35.h"
 //lm35::lm35()
 	//{

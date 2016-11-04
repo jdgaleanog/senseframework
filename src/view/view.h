@@ -11,7 +11,6 @@ Lanzado bajo licencia ---
 #define view_h
 #include "led.h"
 #include "Arduino.h"
-#include "Arduino.h"
 #include "viewlist.h"
 #define LCD 1
 #define LED 2

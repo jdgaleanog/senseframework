@@ -8,7 +8,7 @@ Lanzado bajo licencia ---
 
 #ifndef functionconv_h
 #define functionconv_h
-#include "arduino.h"
+#include "Arduino.h"
 
 #define F 7
 #define K 8

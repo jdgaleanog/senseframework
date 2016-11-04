@@ -5,7 +5,7 @@ Creada por Nombre Autor, Fecha
 Lanzado bajo licencia ---
 */
 
-#include "arduino.h"
+#include "Arduino.h"
 #include "sensor.h"
 
 

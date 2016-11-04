@@ -6,7 +6,7 @@ Creada por Nombre Autor, Fecha
 Lanzado bajo
 */
 
-#include "arduino.h"
+#include "Arduino.h"
 #include "sensor.h"
 //#include "lm35.h"
 void sensor::init(int type, int pin0, int pin1)

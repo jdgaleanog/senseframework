@@ -1,4 +1,4 @@
-#include "arduino.h"
+#include "Arduino.h"
 #include "controller.h"
 
 #include "../view/view.h"

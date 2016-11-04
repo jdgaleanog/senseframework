@@ -1,6 +1,6 @@
 #ifndef ethernetconfig_h
 #define ethernetconfig_h
-#include "arduino.h"
+#include "Arduino.h"
 #include "Ethernet.h"
 #include "SPI.h"
 #include "ethernetlist.h"

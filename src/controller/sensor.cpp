@@ -6,7 +6,7 @@ Creada por Nombre Autor, Fecha
 
 Lanzado bajo
 */
-#include "arduino.h"
+#include "Arduino.h"
 #include "sensor.h"
 
 sensor::sensor() {}

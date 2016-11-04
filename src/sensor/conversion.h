@@ -4,7 +4,7 @@ Eliminar
 
 #ifndef conversion_h
 #define conversion_h
-#include "arduino.h"
+#include "Arduino.h"
 
 #define F 7
 

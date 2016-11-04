@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include "arduino.h"
+#include "Arduino.h"
 
 
 #define LM35 1
