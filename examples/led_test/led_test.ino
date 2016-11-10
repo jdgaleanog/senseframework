@@ -1,13 +1,17 @@
 #include "senseframework.h"
 
 sense refrigerador;
+int pin=11;
+int idDHT = 0; 
+
 
 void setup() {
-  int idDHT = refrigerador.sensor(DHT, 11); 
-  refrigerador.show(idDHT, LED, 12);
-  refrigerador.show(idDHT, LED, 13);
+  
+ idDHT = refrigerador.sensor(DHT11, pin); 
+
 }
 
 void loop() {
-  refigerador.run();
+  
+ // refrigerador.run();
 }
