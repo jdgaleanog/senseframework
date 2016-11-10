@@ -10,8 +10,8 @@ sense::sense(void)
 
 int sense::sensorSelect(int type, int pin)
 {
-int id;
-    id=sensor(type,pin);
+  int id;
+  id=sensor(type,pin);
 
 }
 

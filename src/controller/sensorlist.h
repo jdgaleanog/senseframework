@@ -10,10 +10,10 @@ Lanzado bajo licencia ---
 #define sensorlist_h
 
 #include "Arduino.h"
-#include "functionconv.h"
-#include "lm35.h"
-#include "lm335.h"
-#include "dht.h"
+#include "../sensor/functionconv.h"
+#include "../sensor/lm35.h"
+#include "../sensor/lm335.h"
+#include "../sensor/dht.h"
 
 class sensorlist : public lm35, public lm335, public dht, public functionconv
 {

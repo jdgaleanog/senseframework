@@ -26,10 +26,7 @@ void view::show(float higherThan, float lowerThan, float var)
 }
 
 
-
-void view::show(char
-
-void view::show(char cons* name, float var)
+void view::show(char const* name, float var)
 {
 
 

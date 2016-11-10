@@ -3,7 +3,6 @@
 
 #include "Arduino.h"
 
-
 #define LM35 1
 #define LM335 2
 #define DHT11 3

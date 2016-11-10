@@ -6,12 +6,12 @@
 
 int controller::sensor(int type, int pin)
 {
-int idSensor=0;
-sensorType[idSensor]=type;
-sensorPin1[idSensor]=pin;
+  int idSensor=0;
+  //sensorType[idSensor]=type;
+  //sensorPin1[idSensor]=pin;
 
-return idSensor;
+  return idSensor;
 
-//idSensor=idSensor+1;
+  //idSensor=idSensor+1;
 
 }
