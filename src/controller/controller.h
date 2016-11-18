@@ -2,6 +2,8 @@
 #define CONTROLLER_H
 
 #include "Arduino.h"
+#include "../view/view.h"
+#include "../model/model.h"
 
 #define LM35 1
 #define LM335 2
@@ -14,25 +16,41 @@
 #define C 9
 
 typedef struct{
-  int typeSensor;
-  int typeView;
+  int idSensor;
+  int idOutput;
 }view_t;
 
 
-class controller
+class controller: public model
 {
   public:
 
 
-    int sensor(int type, int pin);
+    int sensorC(int type, int pin1);
+    int sensorC(int type, int pin1, int pin2);
+    int outputC(int idS, int output, int pin1);
+    float sensorRead(int idS);
+    void outputShow(int idV);
 //    void show(int id, int type, int pin);
   //  void run(void);
 
-  private:
-    view_t viewsArray[10];
+  view_t viewsArray[10];
 
-    int sensorType[10];
-    int sensorPin1[10];
+  int sensorType[10];
+  int sensorPin1[10];
+  int sensorPin2[10];
+  int idSensor=0;
+
+  int outputType[10];
+  int outputPin1[10];
+  int idV=0;
+
+  int prueba=30;
+  float _dataReaded;
+  void * pvSensor[10];
+
+  private:
+
 
 };
 

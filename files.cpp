@@ -5,6 +5,8 @@
 #include "src/controller/init.cpp"
 #include "src/controller/read.cpp"
 #include "src/controller/sensor.cpp"
+#include "src/controller/sensorRead.cpp"
+#include "src/controller/outputShow.cpp"
 
 #include "src/ethernetconfig/connect.cpp"
 #include "src/ethernetconfig/dataUpload.cpp"
@@ -22,9 +24,10 @@
 
 #include "src/view/initview.cpp"
 #include "src/view/led.cpp"
-#include "src/view/LiquidCrystal.cpp"
+#include "src/view/Lcd.cpp"
 #include "src/view/show.cpp"
 #include "src/view/view.cpp"
+
 
 
 #endif  /* FILES_H */

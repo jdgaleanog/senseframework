@@ -8,9 +8,9 @@ Lanzado bajo
 
 #include "Arduino.h"
 #include "lm35.h"
-//lm35::lm35()
-	//{
-	//}
+lm35::lm35()
+	{
+	}
 
 
 void lm35::initlm35(int pin)

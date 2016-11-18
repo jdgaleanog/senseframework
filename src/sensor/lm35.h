@@ -15,7 +15,7 @@ class lm35
       {
 
        public:
-   //lm35();
+   lm35();
         void initlm35(int pin);
         float readlm35();
         int _pin;

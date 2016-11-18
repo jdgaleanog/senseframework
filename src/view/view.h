@@ -9,17 +9,15 @@ Lanzado bajo licencia ---
 #ifndef view_h
 
 #define view_h
-#include "led.h"
 #include "Arduino.h"
 #include "viewlist.h"
 #define LCD 1
 #define LED 2
-#include "LiquidCrystal.h"
-#include "led.h"
 
 
 
-class view :  public led, LiquidCrystal
+
+class view :  public viewlist
 
       {
 
