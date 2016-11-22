@@ -75,13 +75,19 @@ void view::initview(uint8_t rs,  uint8_t enable,
 
 
 
-void view::initview(int pin)
+void view::initview(int type, int pin0)
 {
-       				 switch (_type) {
+	switch (type) {
 
-        					case LED:
-    							initled(pin);
-    							break;
+			case LED:
+			led* view1;
+			view1=new led();
+			pvOutput[idOutput]=view1;
+			view1->initled(pin0);
 
-				}
+			outputType[idOutput]=type;
+			idOutput=idOutput+1;
+
+			break;
+       		
 }

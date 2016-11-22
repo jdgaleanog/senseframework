@@ -10,8 +10,7 @@ void controller::outputShow(int idV)
 
   switch (outputType[idV]) {
     case LM35:
-          initlm35(sensorPin1[idV]);
-          _dataReaded=readlm35();
+
 
         break;
 

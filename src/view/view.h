@@ -11,30 +11,21 @@ Lanzado bajo licencia ---
 #define view_h
 #include "Arduino.h"
 #include "viewlist.h"
+#include "../controller/controller.h"
 #define LCD 1
 #define LED 2
 
 
 
 
-class view :  public viewlist
+class view: public viewlist
 
       {
 
        public:
-       view(int type, int pin);
-       view(int type, uint8_t rs, uint8_t enable,
-              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
-              uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
-       view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
-              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
-              uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
-       view(int type, uint8_t rs, uint8_t rw, uint8_t enable,
-              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
-       view(int type, uint8_t rs, uint8_t enable,
-              uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
-       void initview(int pin);
+
+       void initview(int type, int pin0);
 
        void initview(uint8_t rs, uint8_t rw, uint8_t enable,
        			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,

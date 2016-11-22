@@ -7,6 +7,7 @@
 #include "src/controller/sensor.cpp"
 #include "src/controller/sensorRead.cpp"
 #include "src/controller/outputShow.cpp"
+#include "src/controller/sensorInit.cpp"
 
 #include "src/ethernetconfig/connect.cpp"
 #include "src/ethernetconfig/dataUpload.cpp"

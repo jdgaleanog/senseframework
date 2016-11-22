@@ -16,7 +16,7 @@ class sense: public controller
     int sensorSelect(int type, int pin1, int pin2);
     int outputSelect(int idS, int type, int pin1);
     void run();
-    float value;
+    float value[2];
 
 };
 
