@@ -24,17 +24,16 @@ class view: public viewlist
 
        public:
 
-         int outputS(int idS, int type, int pin1);
-         int outputS(int type, int pin);
-         int outputS(int type, uint8_t rs, uint8_t enable,
+         int outputSelect(int type, int pin);
+         int outputSelect(int type, uint8_t rs, uint8_t enable,
                 uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
                 uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
-         int outputS(int type, uint8_t rs, uint8_t rw, uint8_t enable,
+         int outputSelect(int type, uint8_t rs, uint8_t rw, uint8_t enable,
                 uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
                 uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
-         int outputS(int type, uint8_t rs, uint8_t rw, uint8_t enable,
+         int outputSelect(int type, uint8_t rs, uint8_t rw, uint8_t enable,
                 uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
-         int outputS(int type, uint8_t rs, uint8_t enable,
+         int outputSelect(int type, uint8_t rs, uint8_t enable,
                 uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
        void initview(int type, int pin0);
@@ -58,6 +57,8 @@ class view: public viewlist
        void show(float refer1, int limit1, float var);
        void show(char const* name, float var);
        void show(char const* name, float var, char const* name2, float var2);
+       void outputConfig(int idO, float higherThan, float lowerThan);
+       void outputConfig(int idO, float refer1, int limit1);
        void outputShow(int idV, float var);
 
 

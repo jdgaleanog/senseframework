@@ -12,6 +12,13 @@ void led::initled(int pin)
   pinMode(pin, OUTPUT);
 }
 
+void led::configLed(float higherThan, float lowerThan)
+{
+  _higherThan=higherThan;
+  _lowerThan=lowerThan;
+
+}
+
 
 void led::showled(float refer1, int limit1, float var)
 {
@@ -48,15 +55,15 @@ void led::showled(float refer1, int limit1, float var)
   }
 }
 
-void led::showled(float higherThan, float lowerThan, float var)
+void led::showled(float var)
 {
 
-  if (higherThan > lowerThan) {
+  if (_higherThan > _lowerThan) {
 
-    if (var> higherThan) {
+    if (var> _higherThan) {
       digitalWrite(_pin,HIGH);
     }
-    else if (var < lowerThan) {
+    else if (var < _lowerThan) {
       digitalWrite(_pin,HIGH);
     }
     else {
@@ -64,9 +71,9 @@ void led::showled(float higherThan, float lowerThan, float var)
     }
   }
 
-  if (higherThan < lowerThan) {
+  if (_higherThan < _lowerThan) {
 
-    if ((var > higherThan)&&(var < lowerThan)){
+    if ((var > _higherThan)&&(var < _lowerThan)){
       digitalWrite(_pin,HIGH);
     }
     else {

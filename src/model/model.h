@@ -10,9 +10,10 @@ Lanzado bajo licencia ---
 #define model_h
 
 #include "Arduino.h"
-#include "../sensor/lm35.h"
-#include "../sensor/lm335.h"
-#include "../sensor/dht.h"
+#include "lm35.h"
+#include "lm335.h"
+#include "dht.h"
+
 
 class model : public lm35, public lm335, public dht
 {

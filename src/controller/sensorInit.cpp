@@ -11,7 +11,7 @@ Lanzado bajo
 //#include "lm35.h"
 void controller::sensorInit(int type, int pin0, int pin1)
 {
-  
+
     switch (type) {
 
         case LM35:
@@ -50,12 +50,22 @@ void controller::sensorInit(int type, int pin0, int pin1)
 
         sensorType[idSensor]=type;
         idSensor=idSensor+1;
-        enter=12;
+        
       }
         break;
 
         case DHT22:
+        {
+        dht* sensordht22;
+        sensordht22=new dht();
+        pvSensor[idSensor]=sensordht22;
+        sensordht22->initDHT(pin0, type);
+        sensordht22->begin();
 
+        sensorType[idSensor]=type;
+        idSensor=idSensor+1;
+
+      }
         break;
     }
 }

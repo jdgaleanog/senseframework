@@ -10,13 +10,16 @@ class led
        public:
             led();
             void initled(int pin);
+            void configLed(float higherThan, float lowerThan);
             void showled(float refer1, int limit1, float var);
-            void showled(float higherThan, float lowerThan, float var);
+            void showled(float var);
 
 
        private:
 
             int _pin;
+            float _higherThan;
+            float _lowerThan;
 
        };
 #endif

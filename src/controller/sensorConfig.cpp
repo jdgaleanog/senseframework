@@ -30,7 +30,23 @@ void controller::sensorConfig(int idS, int unit)
         }
         break;
 
+        case DHT11:
+        {
+        dht *q = static_cast<dht *>(pvSensor[idS]);
+        int variable=unit;
+        q->configDHT(variable, 0);
+        }
+        break;
+
+        case DHT22:
+        {
+        dht *q = static_cast<dht *>(pvSensor[idS]);
+        int variable=unit;
+        q->configDHT(variable, 0);
+        }
+        break;
       }
+
 }
 
 void controller::sensorConfig(int idS,int variable, int unit)
