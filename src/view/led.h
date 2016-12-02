@@ -8,7 +8,7 @@ class led
       {
 
        public:
-
+            led();
             void initled(int pin);
             void showled(float refer1, int limit1, float var);
             void showled(float higherThan, float lowerThan, float var);

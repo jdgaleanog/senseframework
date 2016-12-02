@@ -12,8 +12,8 @@ Lanzado bajo licencia ---
 
 #define LM35 1
 #define LM335 2
-#define DHT11 3
-#define DHT22 4
+#define DHT11 11
+#define DHT22 22
 #define TEMPERATURE 5
 #define HUMIDITY 6
 #define F 7

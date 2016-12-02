@@ -7,18 +7,27 @@ sense refrigerador;
 int pin=4; 
 int idLM1 =0;
 int idLM2 =0;  
-int  idLED=0;
+int  idLED1=0;
+int  idLED2=0;
+int turno=1;
+unsigned long previousMillis = 0;     
+const long interval = 1000;    
 LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
 
 void setup() {
   
  //idDHT = refrigerador.sensorSelect(DHT11, pin); 
- idLM1 = refrigerador.sensorSelect(LM35, pin); 
- idLM2 = refrigerador.sensorSelect(LM35, 3); 
- 
- idLED=refrigerador.outputSelect(idLM1, LED, 12);
- idLED=refrigerador.outputSelect(idLM2, LED, 13);
- //refrigerador.outputConfig(idDHT, LED, 13);
+ idLM1 = refrigerador.sensorSelect(LM335, 3); 
+ idLM2 = refrigerador.sensorSelect(DHT11, 4); 
+  refrigerador.sensorConfig(idLM1, C);
+  refrigerador.sensorConfig(idLM2, TEMPERATURE, C);
+  
+ idLED1=refrigerador.outputSelect(LED, 1);
+ idLED2=refrigerador.outputSelect(LED, 13);
+
+
+  refrigerador.connectSV(idLM1, idLED1);
+  refrigerador.connectSV(idLM2, idLED1);
  
   
  lcd.begin(16,2);
@@ -29,18 +38,31 @@ void setup() {
 }
 
 void loop() {
-  
-  refrigerador.run();
+unsigned long currentMillis = millis();
+  refrigerador.run();  
+ if (currentMillis - previousMillis >= interval) {
+    // save the last time you blinked the LED
+    
+if(turno==1){
    lcd.begin(16,2);
    lcd.setCursor(0,2);
    lcd.print("timer:");
    lcd.setCursor(0,0);
-   lcd.print(refrigerador.calue[0]);
-   delay(1000);
+   lcd.print(refrigerador.value[1]);
+   previousMillis = currentMillis;  
+   turno=0;
+}
+
+else{
+    
       lcd.begin(16,2);
    lcd.setCursor(0,2);
    lcd.print("timer:");
    lcd.setCursor(0,0);
-   lcd.print(refrigerador.value[1]);
-   delay(1000);
+   lcd.print(refrigerador.value[0]);
+   previousMillis = currentMillis;  
+   turno=1;
+    }
+ }
 }
+

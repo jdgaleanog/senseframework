@@ -6,6 +6,45 @@ written by Adafruit Industries
 
 #include "dht.h"
 
+dht::dht()
+{
+}
+
+void dht::configDHT(int variable, int unit)
+{
+  _variable = variable;
+  _unit = unit;
+}
+
+float dht::readDHT()
+{
+  switch (_variable) {
+
+    case HUMIDITY:
+      {
+          _dataReaded=readHumidity();
+      }
+    break;
+    case TEMPERATURE:
+    {
+        _dataReaded=readTemperature(false);
+    }
+    break;
+  }
+
+  if (_unit==C){
+
+    }
+
+  else
+    {
+      _dataReaded=conversion(_dataReaded, _unit);
+
+    }
+    
+  return _dataReaded;
+}
+
 
 void dht::initDHT(int pin, int type)
 {

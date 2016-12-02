@@ -1,8 +1,6 @@
 #include "Arduino.h"
-#include "controller.h"
+#include "view.h"
 
-#include "../view/view.h"
-#include "../model/model.h"
 
 void controller::outputShow(int idV)
 {

@@ -11,6 +11,7 @@ written by Adafruit Industries
 #include "WProgram.h"
 #endif
 
+#include "functionconv.h"
 
 // Uncomment to enable printing out nice debug messages.
 //#define DHT_DEBUG
@@ -32,11 +33,20 @@ written by Adafruit Industries
 #define DHT22 22
 #define DHT21 21
 #define AM2301 21
+#define TEMPERATURE 5
+#define HUMIDITY 6
+#define F 7
+#define K 8
+#define C 9
 
 
-class dht {
+class dht: public functionconv
+ {
   public:
+  dht();
 	void initDHT(int pin, int type);
+  void configDHT(int variable, int unit);
+  float readDHT();
 	void begin(void);
 	float readTemperature(bool S=false);
 	float convertCtoF(float);
@@ -51,6 +61,9 @@ class dht {
   uint32_t _lastreadtime, _maxcycles;
   bool _firstreading;
   bool _lastresult;
+  int _variable;
+  int _unit;
+  float _dataReaded;
 
   uint32_t expectPulse(bool level);
 

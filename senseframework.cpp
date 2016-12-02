@@ -24,10 +24,10 @@ int sense::sensorSelect(int type, int pin1, int pin2)
   return id;
 }
 
-int sense::outputSelect(int idS, int out, int pin1)
+int sense::outputSelect(int type, int pin1)
 {
 
-  outputS(idS, out,  pin1);
+  outputS(type,  pin1);
 
 }
 
@@ -36,7 +36,7 @@ void sense::run()
   for (int i = 0; i <idStruct; i++) {
 
     value[i]=sensorRead(viewsArray[i].idSensor);
-    outputShow(viewsArray[i].idOutput);
+    outputShow(viewsArray[i].idOutput, value[i]);
 
   }
 

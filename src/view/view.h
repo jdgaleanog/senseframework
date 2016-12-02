@@ -11,7 +11,7 @@ Lanzado bajo licencia ---
 #define view_h
 #include "Arduino.h"
 #include "viewlist.h"
-#include "../controller/controller.h"
+
 #define LCD 1
 #define LED 2
 
@@ -24,6 +24,18 @@ class view: public viewlist
 
        public:
 
+         int outputS(int idS, int type, int pin1);
+         int outputS(int type, int pin);
+         int outputS(int type, uint8_t rs, uint8_t enable,
+                uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+                uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+         int outputS(int type, uint8_t rs, uint8_t rw, uint8_t enable,
+                uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+                uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
+         int outputS(int type, uint8_t rs, uint8_t rw, uint8_t enable,
+                uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
+         int outputS(int type, uint8_t rs, uint8_t enable,
+                uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
        void initview(int type, int pin0);
 
@@ -46,6 +58,8 @@ class view: public viewlist
        void show(float refer1, int limit1, float var);
        void show(char const* name, float var);
        void show(char const* name, float var, char const* name2, float var2);
+       void outputShow(int idV, float var);
+
 
        private:
 
@@ -68,7 +82,12 @@ class view: public viewlist
        int _name2;
        float _var2;
 
+       int outputType[10];
+       int outputPin1[10];
+       int idOutput=0;
 
+
+       void * pvOutput[10];
 
 };
 #endif

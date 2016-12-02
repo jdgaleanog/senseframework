@@ -11,30 +11,51 @@ Lanzado bajo
 //#include "lm35.h"
 void controller::sensorInit(int type, int pin0, int pin1)
 {
-
+  
     switch (type) {
 
         case LM35:
-        lm35* sensor1;
-        sensor1=new lm35();
-        pvSensor[idSensor]=sensor1;
-        sensor1->initlm35(pin0);
+        {
+        lm35* sensorlm35;
+        sensorlm35=new lm35();
+        pvSensor[idSensor]=sensorlm35;
+        sensorlm35->initlm35(pin0);
 
         sensorType[idSensor]=type;
         idSensor=idSensor+1;
 
+      }
         break;
 
         case LM335:
-          initlm335(pin0);
+        {
+        lm335* sensorlm335;
+        sensorlm335=new lm335();
+        pvSensor[idSensor]=sensorlm335;
+        sensorlm335->initlm335(pin0);
+
+        sensorType[idSensor]=type;
+        idSensor=idSensor+1;
+
+      }
         break;
 
         case DHT11:
-          initDHT(pin0, type);
+        {
+        dht* sensordht11;
+        sensordht11=new dht();
+        pvSensor[idSensor]=sensordht11;
+        sensordht11->initDHT(pin0, type);
+        sensordht11->begin();
+
+        sensorType[idSensor]=type;
+        idSensor=idSensor+1;
+        enter=12;
+      }
         break;
 
         case DHT22:
-          initDHT(pin0, type);
+
         break;
-}
+    }
 }

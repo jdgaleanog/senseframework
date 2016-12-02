@@ -80,6 +80,7 @@ void view::initview(int type, int pin0)
 	switch (type) {
 
 			case LED:
+			{
 			led* view1;
 			view1=new led();
 			pvOutput[idOutput]=view1;
@@ -87,7 +88,8 @@ void view::initview(int type, int pin0)
 
 			outputType[idOutput]=type;
 			idOutput=idOutput+1;
-
+			}
 			break;
-       		
+
+}
 }

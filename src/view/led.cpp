@@ -1,11 +1,15 @@
 #include "Arduino.h"
 #include "led.h"
 
+led::led()
+{
+
+}
 
 void led::initled(int pin)
 {
-   _pin = pin;
-   pinMode(pin, OUTPUT);
+  _pin = pin;
+  pinMode(pin, OUTPUT);
 }
 
 
@@ -13,62 +17,60 @@ void led::showled(float refer1, int limit1, float var)
 {
 
 
-    switch (limit1) {
+  switch (limit1) {
 
-        case HIGHER:
+    case HIGHER:
 
-            if (var > refer1)
-            {
-            digitalWrite(_pin,HIGH);
-            }
-            if (var < refer1)
-            {
-            digitalWrite(_pin,LOW);
-            }
+    if (var > refer1)
+    {
+      digitalWrite(_pin,HIGH);
+    }
+    if (var < refer1)
+    {
+      digitalWrite(_pin,LOW);
+    }
 
-        break;
+    break;
 
-        case LOWER:
+    case LOWER:
 
-            if (var < refer1)
-            {
-            digitalWrite(_pin,HIGH);
-            }
-            if (var > refer1)
-            {
-            digitalWrite(_pin,LOW);
-            }
+    if (var < refer1)
+    {
+      digitalWrite(_pin,HIGH);
+    }
+    if (var > refer1)
+    {
+      digitalWrite(_pin,LOW);
+    }
 
-        break;
+    break;
 
-}
+  }
 }
 
 void led::showled(float higherThan, float lowerThan, float var)
 {
 
+  if (higherThan > lowerThan) {
 
-        if (higherThan > lowerThan) {
+    if (var> higherThan) {
+      digitalWrite(_pin,HIGH);
+    }
+    else if (var < lowerThan) {
+      digitalWrite(_pin,HIGH);
+    }
+    else {
+      digitalWrite(_pin, LOW);
+    }
+  }
 
-        if (var> higherThan) {
-            digitalWrite(_pin,HIGH);
-            }
-        else if (var < lowerThan) {
-            digitalWrite(_pin,HIGH);
-            }
-        else {
-            digitalWrite(_pin, LOW);
-            }
-          }
+  if (higherThan < lowerThan) {
 
-        if (higherThan < lowerThan) {
-
-        if ((var > higherThan)&&(var < lowerThan)){
-            digitalWrite(_pin,HIGH);
-            }
-        else {
-            digitalWrite(_pin, LOW);
-            }
-        }
-
+    if ((var > higherThan)&&(var < lowerThan)){
+      digitalWrite(_pin,HIGH);
+    }
+    else {
+      digitalWrite(_pin, LOW);
+    }
+  }
 }

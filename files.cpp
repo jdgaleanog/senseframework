@@ -6,8 +6,8 @@
 #include "src/controller/read.cpp"
 #include "src/controller/sensor.cpp"
 #include "src/controller/sensorRead.cpp"
-#include "src/controller/outputShow.cpp"
 #include "src/controller/sensorInit.cpp"
+#include "src/controller/sensorConfig.cpp"
 
 #include "src/ethernetconfig/connect.cpp"
 #include "src/ethernetconfig/dataUpload.cpp"
@@ -28,6 +28,7 @@
 #include "src/view/Lcd.cpp"
 #include "src/view/show.cpp"
 #include "src/view/view.cpp"
+#include "src/view/outputShow.cpp"
 
 
 

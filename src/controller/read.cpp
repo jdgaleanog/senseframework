@@ -39,16 +39,7 @@ float sensor::read(int unit)
         break;
     }
 
-    if (unit=C){
-      }
-
-    else
-      {
-        _dataReaded=conversion(_dataReaded, unit);
-      }
-
-        return _dataReaded;
-  }
+}
 
 
 float sensor::read(int variable, int unit)
@@ -68,15 +59,4 @@ float sensor::read(int variable, int unit)
         break;
     }
 
-   if (unit==C)
-    {
-        _dataReaded=_dataReaded;
-    }
-
-    if((unit==F)||(unit==K))
-    {
-        _dataReaded=conversion(_dataReaded, unit);
-    }
-
-    return _dataReaded;
 }

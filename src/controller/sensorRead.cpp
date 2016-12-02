@@ -21,7 +21,19 @@ float controller::sensorRead(int idS)
 
        case LM335:
        {
-       initlm335(sensorPin1[idS]);}
+        lm335 *q = static_cast<lm335 *>(pvSensor[idS]);
+//q->initlm35(sensorPin1[idS]);
+  _dataReaded=q->readlm335();
+       }
+       break;
+
+       case DHT11:
+       {
+        dht *q = static_cast<dht *>(pvSensor[idS]);
+//q->initlm35(sensorPin1[idS]);
+  _dataReaded=q->readDHT();
+
+       }
        break;
 
 
