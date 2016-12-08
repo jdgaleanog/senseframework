@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "view.h"
 
-
+/*
 
 void view::show(float refer1, int limit1, float var)
 {
@@ -71,3 +71,4 @@ void view::show(char const* name, float var, char const* name2, float var2)
 
   }
 }
+*/

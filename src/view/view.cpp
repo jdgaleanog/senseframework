@@ -12,9 +12,10 @@ int view::outputSelect(int type, uint8_t rs, uint8_t rw, uint8_t enable,
 
 //	init(0, rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 
-
-
+	outputType[idOutput]=type;
 	initview(rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+	return idOutput-1;
+
 //	begin(16,2);
 
   //Init(0, rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
@@ -27,7 +28,9 @@ int view::outputSelect(int type, uint8_t rs, uint8_t enable,
   //init(0, rs, 255, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 
 	//begin(16,2);
+	outputType[idOutput]=type;
 	initview(rs, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+	return idOutput-1;
   //Init(0, rs, 255, enable, d0, d1, d2, d3, d4, d5, d6, d7);
 }
 
@@ -36,8 +39,10 @@ int view::outputSelect(int type, uint8_t rs, uint8_t rw, uint8_t enable,
 {
   //init(1, rs, rw, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 
-
+	outputType[idOutput]=type;
 	initview(rs, rw, enable, d0, d1, d2, d3);
+	return idOutput-1;
+
 
 	//begin(16,2);
   //Init(1, rs, rw, enable, d0, d1, d2, d3, 0, 0, 0, 0);
@@ -49,7 +54,10 @@ int view::outputSelect(int type, uint8_t rs,  uint8_t enable,
   //init(1, rs, 255, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 
 //	begin(16,2);
+outputType[idOutput]=type;
 initview(rs,  enable, d0, d1, d2, d3);
+return idOutput-1;
+
   //Init(1, rs, 255, enable, d0, d1, d2, d3, 0, 0, 0, 0);
 }
 

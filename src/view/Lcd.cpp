@@ -23,6 +23,15 @@
 // Note, however, that resetting the Arduino doesn't reset the LCD, so we
 // can't assume that its in that state when a sketch starts (and the
 // Lcd constructor is called).
+Lcd::Lcd()
+{
+
+}
+
+void Lcd::configLcd(char const* name)
+{
+	_name=name;
+}
 
 void Lcd::initlcd(uint8_t rs, uint8_t rw, uint8_t enable,
 			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,

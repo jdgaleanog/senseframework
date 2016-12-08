@@ -11,7 +11,7 @@ class led
             led();
             void initled(int pin);
             void configLed(float higherThan, float lowerThan);
-            void showled(float refer1, int limit1, float var);
+            void configLed(float refer1, int limit1);
             void showled(float var);
 
 
@@ -20,6 +20,9 @@ class led
             int _pin;
             float _higherThan;
             float _lowerThan;
+            int _conLed;
+            float _refer1;
+            int _limit1;
 
        };
 #endif

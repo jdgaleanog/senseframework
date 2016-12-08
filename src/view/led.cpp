@@ -16,47 +16,55 @@ void led::configLed(float higherThan, float lowerThan)
 {
   _higherThan=higherThan;
   _lowerThan=lowerThan;
+  _conLed=0;
 
 }
 
-
-void led::showled(float refer1, int limit1, float var)
+void led::configLed(float refer1, int limit1)
 {
-
-
-  switch (limit1) {
-
-    case HIGHER:
-
-    if (var > refer1)
-    {
-      digitalWrite(_pin,HIGH);
-    }
-    if (var < refer1)
-    {
-      digitalWrite(_pin,LOW);
-    }
-
-    break;
-
-    case LOWER:
-
-    if (var < refer1)
-    {
-      digitalWrite(_pin,HIGH);
-    }
-    if (var > refer1)
-    {
-      digitalWrite(_pin,LOW);
-    }
-
-    break;
-
-  }
+  _refer1=refer1;
+  _limit1=limit1;
+  _conLed=1;
 }
 
 void led::showled(float var)
 {
+
+  if (_conLed==1)
+  {
+    switch (_limit1) {
+
+      case HIGHER:
+
+      if (var > _refer1)
+      {
+        digitalWrite(_pin,HIGH);
+      }
+      if (var < _refer1)
+      {
+        digitalWrite(_pin,LOW);
+      }
+
+      break;
+
+      case LOWER:
+
+      if (var < _refer1)
+      {
+        digitalWrite(_pin,HIGH);
+      }
+      if (var > _refer1)
+      {
+        digitalWrite(_pin,LOW);
+      }
+
+      break;
+
+    }
+  }
+
+  if(_conLed==0)
+  {
 
   if (_higherThan > _lowerThan) {
 
@@ -78,6 +86,7 @@ void led::showled(float var)
     }
     else {
       digitalWrite(_pin, LOW);
+      }
     }
   }
 }

@@ -59,6 +59,7 @@ class view: public viewlist
        void show(char const* name, float var, char const* name2, float var2);
        void outputConfig(int idO, float higherThan, float lowerThan);
        void outputConfig(int idO, float refer1, int limit1);
+       void outputConfig(int idO, char const* name);
        void outputShow(int idV, float var);
 
 

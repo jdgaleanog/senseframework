@@ -8,12 +8,17 @@ void view::initview(uint8_t rs, uint8_t rw, uint8_t enable,
 
 					 {
 
-			 		    switch (_type) {
+			 		    switch (outputType[idOutput]) {
 
 			 		        case LCD:
-
-			 		        initlcd(rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
-			 						begin(16,2);
+									{
+									Lcd* viewlcd;
+									viewlcd=new Lcd();
+									pvOutput[idOutput]=viewlcd;
+									viewlcd->initlcd(rs, rw, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+			 						viewlcd->begin(16,2);
+									idOutput=idOutput+1;
+								}
 			 		        break;
 
 			 		    }
@@ -26,12 +31,17 @@ void view::initview(uint8_t rs, uint8_t enable,
 
 					 {
 
- 					    switch (_type) {
+ 					    switch (outputType[idOutput]) {
 
  					        case LCD:
-
- 					        initlcd(rs, enable, d0, d1, d2, d3, d4, d5, d6, d7);
- 									begin(16,2);
+									{
+									Lcd* viewlcd;
+									viewlcd=new Lcd();
+									pvOutput[idOutput]=viewlcd;
+									viewlcd->initlcd(rs, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+ 									viewlcd->begin(16,2);
+									idOutput=idOutput+1;
+								}
  					        break;
 
  					    }
@@ -43,12 +53,17 @@ void view::initview(uint8_t rs, uint8_t rw, uint8_t enable,
 
 					 {
 
-					     switch (_type) {
+					     switch (outputType[idOutput]) {
 
 					         case LCD:
-
-					         initlcd(rs, rw, enable, d0, d1, d2, d3);
-					 			 	 begin(16,2);
+									 {
+									 Lcd* viewlcd;
+									 viewlcd=new Lcd();
+									 pvOutput[idOutput]=viewlcd;
+									 viewlcd->initlcd(rs, rw, enable, d0, d1, d2, d3);
+					 			 	 viewlcd->begin(16,2);
+									 idOutput=idOutput+1;
+								 }
 					         break;
 
 					     }
@@ -61,12 +76,17 @@ void view::initview(uint8_t rs,  uint8_t enable,
 
 					 {
 
-					     switch (_type) {
+					     switch (outputType[idOutput]) {
 
 					         case LCD:
-
-					         initlcd(rs, enable, d0, d1, d2, d3);
-					 			 	 begin(16,2);
+									 {
+									 Lcd* viewlcd;
+									 viewlcd=new Lcd();
+									 pvOutput[idOutput]=viewlcd;
+									 viewlcd->initlcd(rs, enable, d0, d1, d2, d3);
+					 			 	 viewlcd->begin(16,2);
+									 idOutput=idOutput+1;
+								 }
 					         break;
 
 					     }

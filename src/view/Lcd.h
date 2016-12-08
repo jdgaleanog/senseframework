@@ -45,6 +45,7 @@
 class Lcd : public Print {
 
 public:
+  Lcd();
   void initlcd(uint8_t rs, uint8_t enable,
 		uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
 		uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
@@ -61,6 +62,7 @@ public:
 	    uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7);
 
   void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
+  void configLcd(char const* name);
 
   void clear();
   void home();
@@ -84,6 +86,7 @@ public:
   virtual size_t write(uint8_t);
   void command(uint8_t);
 
+  char const* _name;
   using Print::write;
 private:
   void send(uint8_t, uint8_t);
@@ -104,6 +107,7 @@ private:
 
   uint8_t _numlines;
   uint8_t _row_offsets[4];
+
 };
 
 #endif
