@@ -4,6 +4,7 @@
 
 sense::sense(void)
 {
+  //currentMillis = millis();
 
 
 }

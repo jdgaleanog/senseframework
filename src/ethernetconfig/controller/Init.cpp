@@ -1,0 +1,33 @@
+/*
+init.cpp - inicializar sensores
+
+Creada por Nombre Autor, Fecha
+
+Lanzado bajo
+*/
+
+#include "Arduino.h"
+#include "sensor.h"
+//#include "lm35.h"
+void sensor::init(int type, int pin0, int pin1)
+{
+
+    switch (_type) {
+
+        case LM35:
+          initlm35(_pin0);
+        break;
+
+        case LM335:
+          initlm335(_pin0);
+        break;
+
+        case DHT11:
+          initDHT(_pin0, _type);
+        break;
+
+        case DHT22:
+          initDHT(_pin0, _type);
+        break;
+}
+}

@@ -13,8 +13,6 @@ class sense: public controller
     sense(void);
 
 
-
-
 };
 
 

@@ -26,7 +26,6 @@
 #include "src/view/initview.cpp"
 #include "src/view/led.cpp"
 #include "src/view/Lcd.cpp"
-#include "src/view/show.cpp"
 #include "src/view/view.cpp"
 #include "src/view/outputShow.cpp"
 #include "src/view/outputConfig.cpp"

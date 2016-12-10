@@ -41,6 +41,8 @@ class controller: public model, public view
 
   view_t viewsArray[10];
 
+  unsigned long currentMillis;
+
   int sensorType[10];
   int sensorPin1[10];
   int sensorPin2[10];
@@ -53,7 +55,6 @@ class controller: public model, public view
   int enter=0;
   int idStruct=0;
 
-  unsigned long currentMillis;
 
   float value[2];
 

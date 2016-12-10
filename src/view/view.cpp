@@ -70,3 +70,10 @@ int view::outputSelect(int type, int pin)
   return idOutput-1;
 
 }
+
+void view::lcdTime(unsigned long interval)
+
+{
+_interval=interval;
+
+}

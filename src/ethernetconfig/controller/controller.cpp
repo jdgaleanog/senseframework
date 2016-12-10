@@ -16,12 +16,13 @@ void controller::connectSV(int idS, int idO)
 {
 
   viewsArray[idStruct].idSensor =  idS;
-viewsArray[idStruct].idOutput =  idO;
-if(outputType[idO]==LCD)
-{
-  lcdnum=lcdnum+1;
-}
-idStruct=idStruct+1;
+  viewsArray[idStruct].idOutput =  idO;
+  idStruct=idStruct+1;
+
+  if(outputType[idO]==LCD)
+  {
+  lcdnum=lcdnum+1;//vista
+  }
 
 }
 
@@ -32,6 +33,7 @@ void controller::run()
     currentMillisView=currentMillis;
     value[i]=sensorRead(viewsArray[i].idSensor);
     outputShow(viewsArray[i].idOutput, value[i]);
+
 
   }
 

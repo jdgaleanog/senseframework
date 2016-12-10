@@ -5,17 +5,41 @@
 void view::outputShow(int idO, float var)
 {
 
-
+//currentMillisView=millis();
   switch (outputType[idO]) {
 
       case LCD:
       {
+      if ((currentMillisView - previousMillis >= _interval)&(next==actual))
+      {
+
+      previousMillis = currentMillisView;
       Lcd *q = static_cast<Lcd *>(pvOutput[idO]);
+      //q->begin(16,2);
+      if (lcdnum>1)
+      {
+        q->clear();
+      }
+
       q->setCursor(0,0);
       q->print(q->_name);
       q->setCursor(0,1);
       q->print(var);
-    }
+      next=next+1;
+      if (next==(lcdnum))
+        {
+          next=0;
+        }
+      }
+
+      actual=actual+1;
+
+      if (actual==(lcdnum))
+        {
+          actual=0;
+        }
+      }
+
 
         break;
 
@@ -29,8 +53,6 @@ void view::outputShow(int idO, float var)
         break;
 
 
-}
+      }
 
-
-
-}
+  }
