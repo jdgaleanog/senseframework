@@ -1,7 +1,7 @@
-#include "ethernetconfig.h"
+#include "controller.h"
 #include "Arduino.h"
 
-void ethernetconfig::functions (int function,  char urlMail[], float higherThan, float lowerThan, float var)
+void controller::ethernetFunction (int function,  char urlMail[], float higherThan, float lowerThan, float var)
 {
   switch (function) {
 
@@ -12,7 +12,7 @@ void ethernetconfig::functions (int function,  char urlMail[], float higherThan,
 }
 }
 
-void ethernetconfig::functions (int function, char url[], String varName[], String value[], int varLength, float minuteInterval)
+void controller::ethernetFunction (int function, char url[], String varName[], String value[], int varLength, float minuteInterval)
 {
   switch (function) {
 

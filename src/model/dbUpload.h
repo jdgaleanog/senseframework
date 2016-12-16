@@ -10,6 +10,7 @@ class dbUpload
 
  public:
 
+   dbUpload();
    void dataUpload (char server[], char url[], String varName[], String value[], int varLength, float minuteInterval);
 
 private:

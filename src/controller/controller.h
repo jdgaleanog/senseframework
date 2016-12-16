@@ -5,6 +5,8 @@
 
 #include "../model/model.h"
 #include "../view/view.h"
+#include "Ethernet.h"
+#include "SPI.h"
 
 #define LM35 1
 #define LM335 2
@@ -15,6 +17,8 @@
 #define F 7
 #define K 8
 #define C 9
+#define MAILALERT 10
+#define DATAUPLOAD 12
 
 typedef struct{
   int idSensor;
@@ -34,6 +38,10 @@ class controller: public model, public view
     float sensorRead(int idS);
 
     void connectSV(int idS, int idO);
+
+    void ethernetConfig(char server[], byte mac[]); //constructor
+    void ethernetFunction(int function,  char urlMail[], float higherThan, float lowerThan, float var);
+    void ethernetFunction(int function, char url[], String varName[], String value[], int varLength, float minuteInterval);
 
     void run();
 //    void show(int id, int type, int pin);
@@ -57,9 +65,13 @@ class controller: public model, public view
 
   float value[2];
 
-
-
   private:
+
+    char* _server;
+    char* _url;
+    int _sent;
+    int _st;
+    byte* _mac;
 
 
 };

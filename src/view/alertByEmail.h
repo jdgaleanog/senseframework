@@ -9,7 +9,7 @@ class alertByEmail
     {
 
     public:
-
+      alertByEmail();
       void mailAlert(char server[], char urlMail[], float higherThan, float lowerThan, float var);
       void sendmail(char urlMail[]);
 

@@ -8,13 +8,12 @@
 #include "src/controller/sensorRead.cpp"
 #include "src/controller/sensorInit.cpp"
 #include "src/controller/sensorConfig.cpp"
+#include "src/controller/ethernetconfig.cpp"
 
-#include "src/ethernetconfig/connect.cpp"
-#include "src/ethernetconfig/dataUpload.cpp"
-#include "src/ethernetconfig/ethernetconfig.cpp"
-#include "src/ethernetconfig/functions.cpp"
-#include "src/ethernetconfig/mailAlert.cpp"
-#include "src/ethernetconfig/sendmail.cpp"
+
+#include "src/model/dbUpload.cpp"
+#include "src/view/alertByEmail.cpp"
+
 
 #include "src/model/conversion.cpp"
 #include "src/model/dht.cpp"

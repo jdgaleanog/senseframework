@@ -1,6 +1,10 @@
 
-#include "ethernetconfig.h"
+#include "dbUpload.h"
 #include "Arduino.h"
+
+dbUpload::dbUpload()
+	{
+	}
 
 void dbUpload::dataUpload(char server[], char url[], String varName[], String value[], int varLength, float minuteInterval)
 {
