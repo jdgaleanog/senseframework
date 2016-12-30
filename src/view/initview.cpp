@@ -111,5 +111,41 @@ void view::initview(int type, int pin0)
 			}
 			break;
 
+		}
 }
+
+void view::initview(int type,  float minuteInterval)
+{
+	switch (type) {
+
+		case WEB:
+		{
+		dbUpload* web1;
+		web1=new dbUpload();
+		pvOutput[idOutput]=web1;
+		web1->initdbUpload(_server, _url,  minuteInterval);
+
+		outputType[idOutput]=type;
+		idOutput=idOutput+1;
+		}
+		break;
+ }
+}
+
+void view::initview(int type)
+{
+	switch (type) {
+
+		case MAIL:
+		{
+		alertByEmail* web1;
+		web1=new alertByEmail();
+		pvOutput[idOutput]=web1;
+		web1->initMail(_serverMail ,_urlMail);
+
+		outputType[idOutput]=type;
+		idOutput=idOutput+1;
+		}
+		break;
+ }
 }

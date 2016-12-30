@@ -10,12 +10,17 @@ class alertByEmail
 
     public:
       alertByEmail();
-      void mailAlert(char server[], char urlMail[], float higherThan, float lowerThan, float var);
+      void mailAlert( float var);
       void sendmail(char urlMail[]);
+      void initMail(char server[], char urlMail[]);
+      void configMail(float higherThan, float lowerThan);
 
     private:
 
       int _st;
-      char* _server;
+      char const* _server;
+      char const* _urlMail;
+      float _higherThan;
+      float _lowerThan;
     };
   #endif

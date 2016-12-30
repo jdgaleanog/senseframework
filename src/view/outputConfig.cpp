@@ -5,9 +5,22 @@
 
 void view::outputConfig(int idO, float higherThan, float lowerThan)
 {
+  switch (outputType[idO]) {
+
+    case LED:
+    {
   led *q = static_cast<led *>(pvOutput[idO]);
 
   q->configLed(higherThan, lowerThan);
+    }
+
+    case MAIL:
+    {
+  alertByEmail *q = static_cast<alertByEmail *>(pvOutput[idO]);
+
+  q->configMail(higherThan, lowerThan);
+    }
+ }
 }
 
 

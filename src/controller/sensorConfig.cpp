@@ -6,7 +6,7 @@ Lanzado bajo licencia ---
 */
 
 #include "Arduino.h"
-#include "sensor.h"
+
 
 
 void controller::sensorConfig(int idS, int unit)

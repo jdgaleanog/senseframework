@@ -4,28 +4,38 @@
 alertByEmail::alertByEmail()
 	{
 	}
-
-void alertByEmail::mailAlert(char server[], char urlMail[], float higherThan, float lowerThan, float var)
+void alertByEmail::initMail(char server[], char urlMail[])
 {
-_server=server;
+	_server=server;
+	_urlMail=urlMail;
+}
+void alertByEmail::configMail(float higherThan, float lowerThan)
+{
+	_higherThan=higherThan;
+	_lowerThan=lowerThan;
 
-  if (higherThan > lowerThan) {
+}
+void alertByEmail::mailAlert( float var)
+{
 
-  if (var> higherThan) {
-      sendmail(urlMail);
+
+  if (_higherThan > _lowerThan) {
+
+  if (var> _higherThan) {
+      sendmail(_urlMail);
       }
-  else if (var < lowerThan) {
-      sendmail(urlMail);
+  else if (var < _lowerThan) {
+      sendmail(_urlMail);
       }
   else {
 
       }
     }
 
-  if (higherThan < lowerThan) {
+  if (_higherThan < _lowerThan) {
 
-  if ((var > higherThan)&&(var < lowerThan)){
-      sendmail(urlMail);
+  if ((var > _higherThan)&&(var < _lowerThan)){
+      sendmail(_urlMail);
       }
   else {
 

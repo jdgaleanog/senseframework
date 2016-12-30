@@ -77,3 +77,22 @@ void view::lcdTime(unsigned long interval)
 _interval=interval;
 
 }
+
+
+int view::outputSelect(int type, char server[], char url[],  float minuteInterval)
+{
+	  _server=server;
+		_url=url;
+
+		initview(type, minuteInterval);
+	  return idOutput-1;
+}
+
+int view::outputSelect(int type,  char serverMail[], char urlMail[])
+
+{
+		_urlMail=urlMail;
+		_serverMail=serverMail;
+		initview(type);
+	  return idOutput-1;
+}

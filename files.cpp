@@ -1,17 +1,18 @@
 #ifndef FILES_H
 #define FILES_H
 
+
+//#define senseframeworkDEBUG
+ 
+
 #include "src/controller/controller.cpp"
-#include "src/controller/init.cpp"
-#include "src/controller/read.cpp"
-#include "src/controller/sensor.cpp"
 #include "src/controller/sensorRead.cpp"
 #include "src/controller/sensorInit.cpp"
 #include "src/controller/sensorConfig.cpp"
 #include "src/controller/ethernetconfig.cpp"
 
 
-#include "src/model/dbUpload.cpp"
+#include "src/view/dbUpload.cpp"
 #include "src/view/alertByEmail.cpp"
 
 

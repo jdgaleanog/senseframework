@@ -8,6 +8,11 @@
 #include "Ethernet.h"
 #include "SPI.h"
 
+
+
+//#define senseframeworkDEBUG 
+
+
 #define LM35 1
 #define LM335 2
 #define DHT11 11
@@ -23,6 +28,7 @@
 typedef struct{
   int idSensor;
   int idOutput;
+  String name;
 }view_t;
 
 
@@ -36,42 +42,36 @@ class controller: public model, public view
     void sensorConfig(int idS, int unit);
     void sensorConfig(int idS,int variable, int unit);
     float sensorRead(int idS);
+    void sensorName(int idS, char Sname[]);
+    String sensorName(int idS);
 
     void connectSV(int idS, int idO);
+    void connectSV(int idS, int idO, String name);
 
-    void ethernetConfig(char server[], byte mac[]); //constructor
-    void ethernetFunction(int function,  char urlMail[], float higherThan, float lowerThan, float var);
-    void ethernetFunction(int function, char url[], String varName[], String value[], int varLength, float minuteInterval);
+    void ethernetConfig( byte mac[]); //constructor
 
     void run();
 //    void show(int id, int type, int pin);
   //  void run(void);
 
-  view_t viewsArray[10];
-
-  int sensorType[10];
-  int sensorPin1[10];
-  int sensorPin2[10];
-  int idSensor=0;
-
-
-  int prueba=30;
-  float _dataReaded;
-  void * pvSensor[10];
-  int enter=0;
-  int idStruct=0;
-
-  unsigned long currentMillis;
-
-  float value[2];
-
   private:
+    view_t viewsArray[10];
+    int sensorType[10];
+    int idSensor=0;
+    float _dataReaded;
+    void * pvSensor[10];
+    int idStruct=0;
 
-    char* _server;
-    char* _url;
+    unsigned long currentMillis;
+
+    float sensorValue[10];
+
     int _sent;
-    int _st;
-    byte* _mac;
+    int j=0;
+
+    String value[10];
+    String varName[10];
+    String name[10];
 
 
 };

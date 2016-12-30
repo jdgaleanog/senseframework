@@ -13,10 +13,10 @@ Lanzado bajo licencia ---
 #include "lm35.h"
 #include "lm335.h"
 #include "dht.h"
-#include "dbUpload.h"
 
 
-class model : public lm35, public lm335, public dht, public dbUpload
+
+class model : public lm35, public lm335, public dht
 {
 
        public:
