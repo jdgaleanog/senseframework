@@ -9,8 +9,8 @@
 class sense: public controller
 
 {
-  public:
-    sense(void);
+public:
+  sense(void);
 
 
 };

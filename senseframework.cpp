@@ -4,13 +4,6 @@
 
 sense::sense(void)
 {
-  //currentMillis = millis();
 
 
 }
-
-
-
-
-
-// Funciones de cofiguración del framework

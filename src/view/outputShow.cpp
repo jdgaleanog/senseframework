@@ -5,7 +5,6 @@
 void view::outputShow(int idO, float var)
 {
 
-  //currentMillisView=millis();
   switch (outputType[idO]) {
 
     case LCD:
@@ -15,7 +14,7 @@ void view::outputShow(int idO, float var)
 
         previousMillis = currentMillisView;
         Lcd *q = static_cast<Lcd *>(pvOutput[idO]);
-        //q->begin(16,2);
+
         if (lcdnum>1)
         {
           q->clear();
@@ -46,16 +45,15 @@ void view::outputShow(int idO, float var)
     case LED:
     {
       led *q = static_cast<led *>(pvOutput[idO]);
-      //q->initlm35(sensorPin1[idS]);
+
 
       q->showled(var);
     }
     break;
 
-    case MAIL:
+    case MAILALERT:
     {
       alertByEmail *q = static_cast<alertByEmail *>(pvOutput[idO]);
-      //q->initlm35(sensorPin1[idS]);
 
       q->mailAlert(var);
     }
@@ -67,6 +65,6 @@ void view::outputShow(int idO, float var)
 
 void view::outputShow(String varName[], String value[], int length, int idO)
 {
-     dbUpload *q = static_cast<dbUpload *>(pvOutput[idO]);
-       q->dataUpload (varName, value, length);
+  dbUpload *q = static_cast<dbUpload *>(pvOutput[idO]);
+  q->dataUpload (varName, value, length);
 }

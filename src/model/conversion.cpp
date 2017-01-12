@@ -13,27 +13,27 @@ Lanzado bajo
 
 float functionconv::conversion(float dataReaded, int unit)
 
-	{
+{
 
-     _dataReaded=dataReaded;
-
-
-     switch(unit)       {
-
-			 	case F:
-
-					_dataReaded=fahrenheit(_dataReaded);
-
-        break;
+	_dataReaded=dataReaded;
 
 
-				case K:
+	switch(unit)       {
 
-					_dataReaded=kelvin(_dataReaded);
+		case F:
 
-        break;
-     }
+		_dataReaded=fahrenheit(_dataReaded);
 
-		 return _dataReaded;
+		break;
 
+
+		case K:
+
+		_dataReaded=kelvin(_dataReaded);
+
+		break;
 	}
+
+	return _dataReaded;
+
+}

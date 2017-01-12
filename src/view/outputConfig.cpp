@@ -9,19 +9,24 @@ void view::outputConfig(int idO, float higherThan, float lowerThan)
 
     case LED:
     {
-  led *q = static_cast<led *>(pvOutput[idO]);
+      led *q = static_cast<led *>(pvOutput[idO]);
 
-  q->configLed(higherThan, lowerThan);
+      q->configLed(higherThan, lowerThan);
     }
+    break;
 
-    case MAIL:
+
+    case MAILALERT:
     {
-  alertByEmail *q = static_cast<alertByEmail *>(pvOutput[idO]);
+      alertByEmail *q = static_cast<alertByEmail *>(pvOutput[idO]);
 
-  q->configMail(higherThan, lowerThan);
+      q->configMail(higherThan, lowerThan);
     }
- }
+    break;
+
+  }
 }
+
 
 
 void view::outputConfig(int idO, float refer1, int limit1)

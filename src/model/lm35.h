@@ -1,6 +1,6 @@
-﻿/*
-  lm35.h - Librería
- para sensar temperatura mediante lm35
+/*
+lm35.h - Librería
+para sensar temperatura mediante lm35
 Creada por Nombre Autor, Fecha
 
 Lanzado bajo licencia ---
@@ -16,17 +16,17 @@ Lanzado bajo licencia ---
 
 
 class lm35: public functionconv
-      {
+{
+  
+public:
+  lm35();
+  void initlm35(int pin);
+  void configlm35(int unit);
+  float readlm35();
+  int _pin;
+  int _unit;
 
-       public:
-        lm35();
-        void initlm35(int pin);
-        void configlm35(int unit);
-        float readlm35();
-        int _pin;
-        int _unit;
-
-	     private:
+private:
 
 };
 

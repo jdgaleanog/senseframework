@@ -66,26 +66,26 @@ void led::showled(float var)
   if(_conLed==0)
   {
 
-  if (_higherThan > _lowerThan) {
+    if (_higherThan > _lowerThan) {
 
-    if (var> _higherThan) {
-      digitalWrite(_pin,HIGH);
+      if (var> _higherThan) {
+        digitalWrite(_pin,HIGH);
+      }
+      else if (var < _lowerThan) {
+        digitalWrite(_pin,HIGH);
+      }
+      else {
+        digitalWrite(_pin, LOW);
+      }
     }
-    else if (var < _lowerThan) {
-      digitalWrite(_pin,HIGH);
-    }
-    else {
-      digitalWrite(_pin, LOW);
-    }
-  }
 
-  if (_higherThan < _lowerThan) {
+    if (_higherThan < _lowerThan) {
 
-    if ((var > _higherThan)&&(var < _lowerThan)){
-      digitalWrite(_pin,HIGH);
-    }
-    else {
-      digitalWrite(_pin, LOW);
+      if ((var > _higherThan)&&(var < _lowerThan)){
+        digitalWrite(_pin,HIGH);
+      }
+      else {
+        digitalWrite(_pin, LOW);
       }
     }
   }

@@ -6,21 +6,22 @@
 
 
 class alertByEmail
-    {
+{
 
-    public:
-      alertByEmail();
-      void mailAlert( float var);
-      void sendmail(char urlMail[]);
-      void initMail(char server[], char urlMail[]);
-      void configMail(float higherThan, float lowerThan);
+public:
+  alertByEmail();
+  void mailAlert( float var);
+  void sendmail(char urlMail[]);
+  void initMail(char server[], char urlMail[]);
+  void configMail(float higherThan, float lowerThan);
 
-    private:
+private:
 
-      int _st;
-      char const* _server;
-      char const* _urlMail;
-      float _higherThan;
-      float _lowerThan;
-    };
-  #endif
+  bool flag=0;
+  int _st;
+  char const* _server;
+  char const* _urlMail;
+  float _higherThan;
+  float _lowerThan;
+};
+#endif

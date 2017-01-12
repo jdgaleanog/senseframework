@@ -12,7 +12,7 @@ Lanzado bajo
 
 float functionconv::kelvin(float dataReaded)
 {
-    float kelv=0;
-    kelv=dataReaded+273.15;
-    return kelv;
+  float kelv=0;
+  kelv=dataReaded+273.15;
+  return kelv;
 }

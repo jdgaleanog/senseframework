@@ -6,21 +6,21 @@
 
 class dbUpload
 
- {
+{
 
- public:
+public:
 
-   dbUpload();
-   void initdbUpload(char server[], char url[],  float minuteInterval);
-   void dataUpload (String varName[], String value[], int varLength);
+  dbUpload();
+  void initdbUpload(char server[], char url[],  float minuteInterval);
+  void dataUpload (String varName[], String value[], int varLength);
 
 private:
 
-int _sent;
+  int _sent;
 
-char const* serverdb;
-char const* urldb;
-float _minuteInterval;
-
+  char const* serverdb;
+  char const* urldb;
+  float _minuteInterval;
+  unsigned long currentMillis, previousMillisdb;
 };
 #endif

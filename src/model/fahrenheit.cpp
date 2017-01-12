@@ -12,7 +12,7 @@ Lanzado bajo
 
 float functionconv::fahrenheit(float dataReaded)
 {
-    float fahr=0;
-    fahr=(dataReaded*9)/5 + 32;
-    return fahr;
+  float fahr=0;
+  fahr=(dataReaded*9)/5 + 32;
+  return fahr;
 }

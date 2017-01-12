@@ -21,11 +21,11 @@ written by Adafruit Industries
 
 // Setup debug printing macros.
 #ifdef DHT_DEBUG
-  #define DEBUG_PRINT(...) { DEBUG_PRINTER.print(__VA_ARGS__); }
-  #define DEBUG_PRINTLN(...) { DEBUG_PRINTER.println(__VA_ARGS__); }
+#define DEBUG_PRINT(...) { DEBUG_PRINTER.print(__VA_ARGS__); }
+#define DEBUG_PRINTLN(...) { DEBUG_PRINTER.println(__VA_ARGS__); }
 #else
-  #define DEBUG_PRINT(...) {}
-  #define DEBUG_PRINTLN(...) {}
+#define DEBUG_PRINT(...) {}
+#define DEBUG_PRINTLN(...) {}
 #endif
 
 // Define types of sensors.
@@ -41,21 +41,21 @@ written by Adafruit Industries
 
 
 class dht: public functionconv
- {
-  public:
+{
+public:
   dht();
-	void initDHT(int pin, int type);
+  void initDHT(int pin, int type);
   void configDHT(int variable, int unit);
   float readDHT();
-	void begin(void);
-	float readTemperature(bool S=false);
-	float convertCtoF(float);
-	float convertFtoC(float);
-	float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=true);
-	float readHumidity(void);
-	boolean read(void);
+  void begin(void);
+  float readTemperature(bool S=false);
+  float convertCtoF(float);
+  float convertFtoC(float);
+  float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=true);
+  float readHumidity(void);
+  boolean read(void);
 
- private:
+private:
   uint8_t data[6];
   uint8_t _pin, _type, _bit, _port;
   uint32_t _lastreadtime, _maxcycles;
@@ -70,13 +70,13 @@ class dht: public functionconv
 };
 
 class InterruptLock {
-  public:
-   InterruptLock() {
+public:
+  InterruptLock() {
     noInterrupts();
-   }
-   ~InterruptLock() {
+  }
+  ~InterruptLock() {
     interrupts();
-   }
+  }
 
 };
 

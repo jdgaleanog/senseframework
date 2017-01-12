@@ -1,6 +1,6 @@
 /*
-  sensorlist.h - Libreria
- lista de librerias a heredar
+sensorlist.h - Libreria
+lista de librerias a heredar
 Creada por Nombre Autor, Fecha
 
 Lanzado bajo licencia ---
@@ -19,7 +19,7 @@ Lanzado bajo licencia ---
 class model : public lm35, public lm335, public dht
 {
 
-       public:
+public:
 
 };
 

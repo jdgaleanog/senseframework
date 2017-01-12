@@ -21,27 +21,27 @@ float dht::readDHT()
   switch (_variable) {
 
     case HUMIDITY:
-      {
-          _dataReaded=readHumidity();
-      }
+    {
+      _dataReaded=readHumidity();
+    }
     break;
     case TEMPERATURE:
     {
-        _dataReaded=readTemperature(false);
+      _dataReaded=readTemperature(false);
     }
     break;
   }
 
   if (_unit==C){
 
-    }
+  }
 
   else
-    {
-      _dataReaded=conversion(_dataReaded, _unit);
+  {
+    _dataReaded=conversion(_dataReaded, _unit);
 
-    }
-    
+  }
+
   return _dataReaded;
 }
 
@@ -54,7 +54,7 @@ void dht::initDHT(int pin, int type)
   _bit = digitalPinToBitMask(pin);
   _port = digitalPinToPort(pin);
   _maxcycles = microsecondsToClockCycles(1000);  // 1 millisecond timeout for
-                                                 // reading pulses from DHT sensor.
+  // reading pulses from DHT sensor.
   // Note that count is now ignored as the DHT reading algorithm adjusts itself
   // basd on the speed of the processor.
 }
@@ -73,18 +73,18 @@ float dht::readTemperature(bool S) {
 
   if (read()) {
     switch (_type) {
-    case DHT11:
+      case DHT11:
       f = data[2];
       if(S) {
         f = convertCtoF(f);
       }
       break;
 
-    case DHT22:
+      case DHT22:
 
 
 
-    case DHT21:
+      case DHT21:
       f = data[2] & 0x7F;
       f *= 256;
       f += data[3];
@@ -113,11 +113,11 @@ float dht::readHumidity(void) {
   float f = NAN;
   if (read()) {
     switch (_type) {
-    case DHT11:
+      case DHT11:
       f = data[0];
       break;
-    case DHT22:
-    case DHT21:
+      case DHT22:
+      case DHT21:
       f = data[0];
       f *= 256;
       f += data[1];
@@ -135,26 +135,26 @@ float dht::computeHeatIndex(float temperature, float percentHumidity, bool isFah
   if (!isFahrenheit) {
     // Celsius heat index calculation.
     return -8.784695 +
-             1.61139411 * temperature +
-             2.338549   * percentHumidity +
-            -0.14611605 * temperature*percentHumidity +
-            -0.01230809 * pow(temperature, 2) +
-            -0.01642482 * pow(percentHumidity, 2) +
-             0.00221173 * pow(temperature, 2) * percentHumidity +
-             0.00072546 * temperature*pow(percentHumidity, 2) +
-            -0.00000358 * pow(temperature, 2) * pow(percentHumidity, 2);
+    1.61139411 * temperature +
+    2.338549   * percentHumidity +
+    -0.14611605 * temperature*percentHumidity +
+    -0.01230809 * pow(temperature, 2) +
+    -0.01642482 * pow(percentHumidity, 2) +
+    0.00221173 * pow(temperature, 2) * percentHumidity +
+    0.00072546 * temperature*pow(percentHumidity, 2) +
+    -0.00000358 * pow(temperature, 2) * pow(percentHumidity, 2);
   }
   else {
     // Fahrenheit heat index calculation.
     return -42.379 +
-             2.04901523 * temperature +
-            10.14333127 * percentHumidity +
-            -0.22475541 * temperature*percentHumidity +
-            -0.00683783 * pow(temperature, 2) +
-            -0.05481717 * pow(percentHumidity, 2) +
-             0.00122874 * pow(temperature, 2) * percentHumidity +
-             0.00085282 * temperature*pow(percentHumidity, 2) +
-            -0.00000199 * pow(temperature, 2) * pow(percentHumidity, 2);
+    2.04901523 * temperature +
+    10.14333127 * percentHumidity +
+    -0.22475541 * temperature*percentHumidity +
+    -0.00683783 * pow(temperature, 2) +
+    -0.05481717 * pow(percentHumidity, 2) +
+    0.00122874 * pow(temperature, 2) * percentHumidity +
+    0.00085282 * temperature*pow(percentHumidity, 2) +
+    -0.00000199 * pow(temperature, 2) * pow(percentHumidity, 2);
   }
 }
 
@@ -282,20 +282,20 @@ uint32_t dht::expectPulse(bool level) {
   // On AVR platforms use direct GPIO port access as it's much faster and better
   // for catching pulses that are 10's of microseconds in length:
   #ifdef __AVR
-    uint8_t portState = level ? _bit : 0;
-    while ((*portInputRegister(_port) & _bit) == portState) {
-      if (count++ >= _maxcycles) {
-        return 0; // Exceeded timeout, fail.
-      }
+  uint8_t portState = level ? _bit : 0;
+  while ((*portInputRegister(_port) & _bit) == portState) {
+    if (count++ >= _maxcycles) {
+      return 0; // Exceeded timeout, fail.
     }
+  }
   // Otherwise fall back to using digitalRead (this seems to be necessary on ESP8266
   // right now, perhaps bugs in direct port access functions?).
   #else
-    while (digitalRead(_pin) == level) {
-      if (count++ >= _maxcycles) {
-        return 0; // Exceeded timeout, fail.
-      }
+  while (digitalRead(_pin) == level) {
+    if (count++ >= _maxcycles) {
+      return 0; // Exceeded timeout, fail.
     }
+  }
   #endif
 
   return count;

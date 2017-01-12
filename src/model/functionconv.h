@@ -1,6 +1,6 @@
 /*
-  functionconv.h - Libreria
- para convertir temperatura leida
+functionconv.h - Libreria
+para convertir temperatura leida
 Creada por Nombre Autor, Fecha
 
 Lanzado bajo licencia ---
@@ -14,17 +14,17 @@ Lanzado bajo licencia ---
 #define K 8
 
 class functionconv
-      {
+{
 
-       public:
+public:
 
-         float conversion(float dataReaded, int unit); //constructor
-         float fahrenheit(float dataReaded);
-         float kelvin(float dataReaded);
+  float conversion(float dataReaded, int unit);
+  float fahrenheit(float dataReaded);
+  float kelvin(float dataReaded);
 
-       private:
+private:
 
-      	 float _dataReaded;
+  float _dataReaded;
 
 };
 

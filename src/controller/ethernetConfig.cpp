@@ -4,39 +4,38 @@
 
 void  controller::ethernetConfig ( byte mac[])
 {
-_sent=0;
+  _sent=0;
 
 
-#ifdef senseframeworkDEBUG 
-   Serial.begin(9600);
+  #ifdef senseframeworkDEBUG
+  Serial.begin(9600);
   Serial.println("hello");
 
-#endif
+  #endif
 
-for(int limitC=0; limitC<=4; limitC++)
-{
-  // start the Ethernet connection:
+  for(int limitC=0; limitC<=4; limitC++)
+  {
 
-  if ( Ethernet.begin(mac)== 0) {
 
-   if (limitC==3 )  {
-     #ifdef senseframeworkDEBUG
-     Serial.println("Failed to configure Ethernet using DHCP. Try again later");
-     #endif
-  //   for (;;)
-  //   ;
+    if ( Ethernet.begin(mac)== 0) {
+
+      if (limitC==3 )  {
+        #ifdef senseframeworkDEBUG
+        Serial.println("Failed to configure Ethernet using DHCP. Try again later");
+        #endif
+
       }
-       else {
-         #ifdef senseframeworkDEBUG
-    Serial.println("Failed to configure Ethernet using DHCP");
-    #endif
-    // no point in carrying on, so do nothing forevermore
+      else {
+        #ifdef senseframeworkDEBUG
+        Serial.println("Failed to configure Ethernet using DHCP");
+        #endif
+
+      }
+
+    }
   }
 
-  }
-}
- // Ethernet.begin(mac);
-#ifdef senseframeworkDEBUG
+  #ifdef senseframeworkDEBUG
   Serial.println("Tweaking4All.com - Temperature Drone - v2.0");
   Serial.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
   Serial.print("IP Address        : ");
@@ -45,5 +44,5 @@ for(int limitC=0; limitC<=4; limitC++)
   Serial.println(Ethernet.subnetMask());
   Serial.print("Default Gateway IP: ");
   Serial.println(Ethernet.gatewayIP());
-#endif
+  #endif
 }

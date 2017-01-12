@@ -11,10 +11,10 @@
 
 class viewlist : public led, public Lcd, public alertByEmail, public dbUpload
 
-      {
+{
 
-       public:
-
+public:
+  
 
 };
 
