@@ -42,6 +42,7 @@ float controller::sensorRead(int idS)
 
   }
 
+
   return _dataReaded;
 
 }

@@ -17,7 +17,7 @@ void lm35::initlm35(int pin)
 
 {
 
-	pinMode(pin, INPUT);  
+
 
 	_pin = pin;
 
@@ -32,11 +32,14 @@ void lm35::configlm35(int unit)
 float lm35::readlm35()
 
 {
+ int val=0;
+ float mv=0;
+ float dataReaded=0;
 
-
-	int val = analogRead(_pin);
-	float mv = (val/1024.0)*5000;
-	float dataReaded = mv/10;
+	val = analogRead(_pin);
+	val = analogRead(_pin);
+	mv = (val/1024.0)*5*1000;
+	dataReaded = mv/10;
 
 
 	if (_unit==C){

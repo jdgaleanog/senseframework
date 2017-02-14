@@ -42,17 +42,17 @@ public:
   void connectSV(int idS, int idO, String name);
   void ethernetConfig( byte mac[]);
   void run();
+  float sensorValue[10];
 
 private:
 
   view_t viewsArray[10];
   int sensorType[10];
   int idSensor=0;
-  float _dataReaded;
+  float _dataReaded=NULL;
   void * pvSensor[10];
   int idStruct=0;
   unsigned long currentMillis;
-  float sensorValue[10];
   int _sent;
   int j=0;
   String value[10];

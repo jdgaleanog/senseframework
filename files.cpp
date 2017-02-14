@@ -1,7 +1,5 @@
 #ifndef FILES_H
 #define FILES_H
-
-
 //#define senseframeworkDEBUG
  
 

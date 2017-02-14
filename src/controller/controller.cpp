@@ -58,31 +58,44 @@ void controller::connectSV(int idS, int idO, String name)
 void controller::run()
 {
   int idO=0;
-  int idserial=0;
+  int idserial=1;
+  String serial="serial";
+  sensorValue[10]=0;
+
   for (int i = 0; i <idStruct; i++) {
 
 
     if (outputType[viewsArray[i].idOutput]==WEB)
     {
-      String serial="serial";
+
       varName[j]=serial + idserial;
       value[j]=sensorName(viewsArray[i].idSensor);
       j=j+1;
       varName[j]=(viewsArray[i].name);
       sensorValue[i]=sensorRead(viewsArray[i].idSensor);
-      String Sread= String(sensorValue[i]);
+      String Sread="";
+      if (isnan(_dataReaded))
+      {
+      Sread="NaN";
+      }
+      else
+      {
+      Sread= String(sensorValue[i]);
+      }
       value[j]=Sread;
-
       j=j+1;
       idserial=idserial+1;
       if(j==2)
       {
         idO=viewsArray[i].idOutput;
       }
+      
+
     }
     else{
       currentMillis=millis();
       currentMillisView=currentMillis;
+
       sensorValue[i]=sensorRead(viewsArray[i].idSensor);
 
       outputShow(viewsArray[i].idOutput, sensorValue[i]);
