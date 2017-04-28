@@ -1,4 +1,4 @@
 Sense Framework
 ===============
 
-![senseframework](https://github.com/jdgaleanog/senseframework/tree/master/images/logo.png)
+![senseframework](https://github.com/jdgaleanog/senseframework/blob/master/images/logo.png)
