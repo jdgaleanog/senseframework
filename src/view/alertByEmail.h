@@ -12,7 +12,7 @@ public:
   alertByEmail();
   void mailAlert( float var);
   void sendmail(char urlMail[]);
-  void initMail(char server[], char urlMail[]);
+  void initMail(char server[], char urlMail[], char email[]);
   void configMail(float higherThan, float lowerThan);
 
 private:
@@ -21,6 +21,7 @@ private:
   int _st;
   char const* _server;
   char const* _urlMail;
+  char const* _email;
   float _higherThan;
   float _lowerThan;
 };

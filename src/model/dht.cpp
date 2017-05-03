@@ -21,25 +21,14 @@ float dht::readDHT()
   switch (_variable) {
 
     case HUMIDITY:
-    {
       _dataReaded=readHumidity();
-    }
-    break;
+      break;
     case TEMPERATURE:
-    {
       _dataReaded=readTemperature(false);
-    }
+      if (_unit==F||_unit==K){
+        _dataReaded=conversion(_dataReaded, _unit);
+      }
     break;
-  }
-
-  if (_unit==C){
-
-  }
-
-  else
-  {
-    _dataReaded=conversion(_dataReaded, _unit);
-
   }
 
   return _dataReaded;
@@ -81,20 +70,17 @@ float dht::readTemperature(bool S) {
       break;
 
       case DHT22:
-
-
-
       case DHT21:
-      f = data[2] & 0x7F;
-      f *= 256;
-      f += data[3];
-      f /= 10;
-      if (data[2] & 0x80) {
-        f *= -1;
-      }
-      if(S) {
-        f = convertCtoF(f);
-      }
+        f = data[2] & 0x7F;
+        f *= 256;
+        f += data[3];
+        f /= 10;
+        if (data[2] & 0x80) {
+          f *= -1;
+        }
+        if(S) {
+          f = convertCtoF(f);
+        }
       break;
     }
   }
@@ -114,15 +100,15 @@ float dht::readHumidity(void) {
   if (read()) {
     switch (_type) {
       case DHT11:
-      f = data[0];
-      break;
+        f = data[0];
+        break;
       case DHT22:
       case DHT21:
-      f = data[0];
-      f *= 256;
-      f += data[1];
-      f /= 10;
-      break;
+        f = data[0];
+        f *= 256;
+        f += data[1];
+        f /= 10;
+        break;
     }
   }
   return f;

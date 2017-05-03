@@ -1,0 +1,10 @@
+name=senseframework
+version=1.0
+author=Paula Andrea Faustino <paulafaustino2297@gmail.com>,Juan David Galeano <judagaga11@hotmail.com>
+maintainer=Juan David Galeano <judagaga11@hotmail.com>
+sentence=A framwork that applies interent of things to monitor refrigerators.
+paragraph=Handle Ethernet, sensors, LCDs and Leds 
+category=Arduino
+url=https://github.com/jdgaleanog/senseframework
+architectures=c++
+includes=files.cpp

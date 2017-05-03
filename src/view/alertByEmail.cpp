@@ -4,10 +4,12 @@
 alertByEmail::alertByEmail()
 {
 }
-void alertByEmail::initMail(char server[], char urlMail[])
+
+void alertByEmail::initMail(char server[], char urlMail[], char email[])
 {
 	_server=server;
 	_urlMail=urlMail;
+	_email=email;
 }
 void alertByEmail::configMail(float higherThan, float lowerThan)
 {
@@ -63,6 +65,12 @@ void alertByEmail::sendmail(char urlMail[])
 		#endif
 		client.print("GET ");
 		client.print(_urlMail);
+		if(_email!=0)
+		{
+		client.print("email");
+		client.print("=");
+		client.print(_email);
+		}
 		client.println(" HTTP/1.1");
 		client.print( "Host: " );
 		client.println(_server);

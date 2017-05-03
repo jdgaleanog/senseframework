@@ -16,9 +16,9 @@ Lanzado bajo licencia ---
 #define LED 2
 #define WEB 3
 #define MAILALERT 4
-
-
-
+#define SERVERURL "senseframework.com"
+#define DBURL "/addData?"
+#define MAILURL "/correo/mail.php?"
 
 
 class view: public viewlist
@@ -26,9 +26,9 @@ class view: public viewlist
 {
 
 public:
-
+  int outputSelect(int type);
   int outputSelect(int type, int pin);
-  int outputSelect(int type,  char serverMail[], char urlMail[]);
+  int outputSelect(int type,  char serverMail[], char urlMail[], char email[]);
   int outputSelect(int type, char server[], char url[],  float minuteInterval);
   int outputSelect(int type, uint8_t rs, uint8_t enable,
     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
@@ -41,7 +41,7 @@ public:
         int outputSelect(int type, uint8_t rs, uint8_t enable,
           uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
-
+          void initview();
           void initview(int type);
           void initview(int type, int pin0);
 
@@ -87,6 +87,7 @@ public:
                   char const* _url;
                   char const* _urlMail;
                   char const* _serverMail;
+                  char const* _email;
 
 
                 };

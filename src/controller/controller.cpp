@@ -73,7 +73,7 @@ void controller::run()
       j=j+1;
       varName[j]=(viewsArray[i].name);
       sensorValue[i]=sensorRead(viewsArray[i].idSensor);
-      String Sread="";
+        String Sread="";
       if (isnan(_dataReaded))
       {
       Sread="NaN";
@@ -89,7 +89,7 @@ void controller::run()
       {
         idO=viewsArray[i].idOutput;
       }
-      
+
 
     }
     else{

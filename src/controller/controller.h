@@ -55,9 +55,9 @@ private:
   unsigned long currentMillis;
   int _sent;
   int j=0;
-  String value[10];
-  String varName[10];
-  String name[10];
+  String value[20];
+  String varName[20];
+  String name[20];
 
 
 };
